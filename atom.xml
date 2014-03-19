@@ -4,7 +4,7 @@
   <title><![CDATA[Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-19T20:36:24+08:00</updated>
+  <updated>2014-03-19T21:31:33+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -14,11 +14,20 @@
 
   
   <entry>
-    <title type="html"><![CDATA[用Octopress搭建自己的博客系统]]></title>
+    <title type="html"><![CDATA[用Octopress在github上搭建自己的博客系统]]></title>
     <link href="http://cedar-renjun.github.io/blog/2014/03/19/how-to-build-your-blog-on-github-page-with-octopress/"/>
     <updated>2014-03-19T20:04:41+08:00</updated>
     <id>http://cedar-renjun.github.io/blog/2014/03/19/how-to-build-your-blog-on-github-page-with-octopress</id>
     <content type="html"><![CDATA[<h2>写在前面的话</h2>
+
+<pre><code>搞软件的，一般都晓得[github](https://github.com)和[stackoverflow](http://stackoverflow.com/)这两个著名网站，前者是分布式代码仓库，后者是技术问答社区，这里不做过多介绍
+
+github在提供分布式代码管理功能的同时，也提供pages功能。借助于pages，程序员可以创建一个属于自己的博客
+
+接下来，我会图文并茂的展示如何在github上搭建自己的博客系统
+
+Show time
+</code></pre>
 
 <h3>适用人群</h3>
 
@@ -37,7 +46,7 @@
 <h2>注意事项</h2>
 
 <ol>
-<li><code>rake preview</code>经测试，无法生效，待研究</li>
+<li>经测试，<code>rake preview</code>无法生效，待研究</li>
 <li>markdown原始文本需保证为UTF-8编码格式</li>
 <li>经测试，octopress在Ruby 2.0.0环境下无法正常工作</li>
 </ol>
