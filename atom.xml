@@ -4,7 +4,7 @@
   <title><![CDATA[Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-19T21:56:22+08:00</updated>
+  <updated>2014-03-19T21:58:51+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -29,16 +29,14 @@
 <p>进行正式介绍之前，先界定适用人群和技术基础，免得浪费您的时间</p>
 
 <ol>
-<li><p><strong>适用人群</strong>
+<li><p><strong>适用人群</strong> <br/>
 喜欢折腾的IT攻城狮</p></li>
-<li><p><strong>技术基础</strong>
+<li><p><strong>技术基础</strong> <br/>
 了解git常用操作，熟悉markdown语法，熟悉HTML，CSS更好</p></li>
-<li><p><strong>操作环境</strong>
+<li><p><strong>操作环境</strong> <br/>
 windows7</p></li>
 </ol>
 
-
-<blockquote><p>注：如果您不具有IT相关知识基础，但也想有一个自己的博客系统，完全没问题的，我后期有时间的话，可以整理一个脚本，并弄一个零基础入门教程，您花10分钟就可以学会管理自己的博客 ^_^</p></blockquote>
 
 <h2>安装和配置git</h2>
 
