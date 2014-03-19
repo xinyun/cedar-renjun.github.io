@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
+  <link href="http://cedar-renjun.github.io/"/>
+  <updated>2014-03-19T19:44:13+08:00</updated>
+  <id>http://cedar-renjun.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello]]></title>
+    <link href="http://cedar-renjun.github.io/blog/2014/03/19/hello/"/>
+    <updated>2014-03-19T19:42:57+08:00</updated>
+    <id>http://cedar-renjun.github.io/blog/2014/03/19/hello</id>
+    <content type="html"><![CDATA[<h2>本文用于测试</h2>
+
+<p>Just for test</p>
+]]></content>
+  </entry>
+  
+</feed>
