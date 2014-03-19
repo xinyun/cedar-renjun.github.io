@@ -4,7 +4,7 @@
   <title><![CDATA[Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-19T21:58:51+08:00</updated>
+  <updated>2014-03-19T22:08:10+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -28,23 +28,42 @@
 
 <p>进行正式介绍之前，先界定适用人群和技术基础，免得浪费您的时间</p>
 
-<ol>
-<li><p><strong>适用人群</strong> <br/>
-喜欢折腾的IT攻城狮</p></li>
-<li><p><strong>技术基础</strong> <br/>
-了解git常用操作，熟悉markdown语法，熟悉HTML，CSS更好</p></li>
-<li><p><strong>操作环境</strong> <br/>
-windows7</p></li>
-</ol>
+<p><strong>适用人群</strong> <br/>
+喜欢折腾的IT攻城狮</p>
 
+<p><strong>技术基础</strong> <br/>
+了解git常用操作，熟悉markdown语法，熟悉HTML，CSS更好</p>
+
+<p><strong>操作环境</strong> <br/>
+windows7</p>
 
 <h2>安装和配置git</h2>
 
+<h3>创建账户</h3>
+
+<h3>下载</h3>
+
+<h3>安装</h3>
+
+<h3>配置</h3>
+
 <h2>安装和配置Ruby</h2>
 
-<h2>配置Octopress</h2>
+<h3>下载Ruby for windows</h3>
+
+<h3>安装Dev Kit</h3>
+
+<h2>安装和配置Octopress</h2>
+
+<h3>下载和安装octopress</h3>
+
+<h3>安装slash主题</h3>
 
 <h2>发布博客系统</h2>
+
+<h3>创建第一个博文</h3>
+
+<h3>发布到github上</h3>
 
 <h2>注意事项</h2>
 
