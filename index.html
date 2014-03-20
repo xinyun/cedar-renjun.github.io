@@ -111,150 +111,14 @@
 了解git常用操作，熟悉markdown语法，熟悉HTML，CSS更好</p>
 
 <p><strong>操作环境</strong> <br/>
-windows7</p>
-
-<h2>1.  部署git</h2>
-
-<p>git是所有操作的基石，让我们来在本地部署git</p>
-
-<p>注：<br/>
-*   如果您是git新手，请严格按照操作步骤，一步一步进行；<br/>
-*   如果您非常熟悉git，请直接阅读1.4章节(配置)部分</p>
-
-<h3>1.1  创建git账户和启用page空间</h3>
-
-<p>首先我们需要有一个github的账户，在浏览器中敲入下面网址：</p>
-
-<pre><code>https://github.com/
-</code></pre>
-
-<p>您会看到github的主页，</p>
-
-<p><img src="/images/2014/03/20/git_signup.jpg" title="Git Signup" alt="Git signup" /></p>
-
-<p>这里我们注册一个新的账号，账户信息如下：</p>
-
-<pre><code>账号名称：Git-Octopress-Demo
-账号密码：Git-Octopress-123
-邮箱地址：git_octopress_demo@163.com
-</code></pre>
-
-<p>点击<code>sigin Up for GitHub</code>后，出现下面界面</p>
-
-<p><img src="/images/2014/03/20/git_signup_conform.jpg" title="Git Signup Conform" alt="Git Signup Conform" /></p>
-
-<p>首先确认<code>Choose your personal plan</code>一栏中选择的是<code>Free</code>，然后直接点击<code>Finsh sign up</code>即可<br/>
-在接下来的界面中，点击<code>New repository</code>按钮来创建一个新仓库</p>
-
-<p><img src="/images/2014/03/20/Create_new_repository_1.jpg" title="Create new repository 1" alt="Create new repository 1" /></p>
-
-<p>点击后，出现下面github仓库信息界面</p>
-
-<p><img src="/images/2014/03/20/Create_new_repository_2.jpg" title="Create new repository 2" alt="Create new repository 2" /></p>
-
-<p>这里，仓库名称为必选项，且名字格式是固定的，为</p>
-
-<pre><code>XXX.github.io
-</code></pre>
-
-<p>形式，XXX是用户的github账户名，所以，我们在仓库名一栏填写如下信息</p>
-
-<pre><code>Git-Octopress-Demo.github.io
-</code></pre>
-
-<p>接下来是仓库描述和README信息，为可选项，可以不填</p>
-
-<p>填写完成后，点击<code>Create Repository</code>完成创建工作，接下来到邮箱里面去验证信息，这里不做过多介绍</p>
-
-<p>至此，我们已经成功的创建了一个github账户，并创建了一个page空间。其实，git上的博客系统分为两类</p>
-
-<p><strong>用户page空间</strong><br/>
-该空间是以用户名创建的page空间，挂载在master主分支上，每个用户最多只能有一个该空间</p>
-
-<p><strong>仓库page空间</strong><br/>
-该空间是github为每个仓库创建的page空间，必须挂载在gh-pages分支上，用户创建任意数量的仓库空间</p>
-
-<p>更多信息，请参考<a href="https://help.github.com/articles/user-organization-and-project-pages">github page帮助页</a></p>
-
-<h3>1.2  下载和安装git客户端</h3>
-
-<p>注册github账户后，我们需要在本地PC上安装git客户端<br/>
-您可以通过下面网址来下载最新windows版本git，并获得相应帮助</p>
-
-<pre><code>https://help.github.com/articles/set-up-git
-</code></pre>
-
-<p>这个是在线安装的，过程很简单，不过因为git软件部署在亚马逊的AWS上，所以下载时间稍微有点长，请耐心等待</p>
-
-<p>安装过程中，可能会输入用户名和用户密码</p>
-
-<p>接下来，我们再配置全局用户名</p>
-
-<pre><code>git config --global user.name "Git-Octopress-Demo"
-# Git-Octopress-Demo 表示用户名，这里填写您自己的名字
-</code></pre>
-
-<p>配置全局邮箱地址</p>
-
-<pre><code>git config --global user.email "git_octopress_demo@163.com"
-# git_octopress_demo@163.com 表示用户邮箱地址，这里替换为您自己的邮箱地址
-</code></pre>
-
-<p><strong>注：命令中的两个双引号是可选的</strong></p>
-
-<h3>1.3  配置</h3>
-
-<h2>部署Ruby</h2>
-
-<h3>下载Ruby for windows</h3>
-
-<h3>安装Dev Kit</h3>
-
-<h2>部署Octopress</h2>
-
-<h3>下载和安装octopress</h3>
-
-<h3>安装slash主题</h3>
-
-<h2>部署Python</h2>
-
-<h3>安装</h3>
-
-<h3>代码高亮</h3>
-
-<h2>发布博客系统</h2>
-
-<h3>创建第一个博文</h3>
-
-<h3>发布到github上</h3>
-
-<h2>注意事项</h2>
-
-<ol>
-<li>经测试，<code>rake preview</code>无法生效，待研究</li>
-<li>markdown原始文本需保证为UTF-8编码格式</li>
-<li>经测试，octopress在Ruby 2.0.0环境下无法正常工作</li>
-<li>如果您发现采用代码高亮后，输出一片空白，请考虑1）是不是python2.7.X，是不是添加环境变量到系统中</li>
-<li>如果无法预览，请检查浏览器设置中，是否使用了代理模式</li>
-<li>插入文档和图片资源</li>
-</ol>
-
-
-<h2>参考资料</h2>
-
-<ol>
-<li><a href="https://github.com/">github主页</a></li>
-<li><a href="http://pages.github.com/">github pages</a></li>
-<li><a href="http://github.github.com/github-flavored-markdown/">markdown语法</a></li>
-<li><a href="https://stackedit.io/">markdown在线编辑器，stackio</a></li>
-<li><a href="http://jekyllrb.com">jekyll项目主页</a></li>
-<li><a href="http://www.w3cschool.cn/">w3cschool网络技术培训</a></li>
-<li><a href="http://octopress.org">octopress项目主页</a></li>
-<li><a href="http://zespia.tw/Octopress-Theme-Slash/index.html">slash主题</a></li>
-</ol>
+windows7 32位</p>
 
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/03/19/how-to-build-your-blog-on-github-page-with-octopress/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -288,9 +152,7 @@ windows7</p>
   </header>
 
 
-  <div class="entry-content"><p>[TOC]</p>
-
-<h2><strong>前言</strong></h2>
+  <div class="entry-content"><h2><strong>前言</strong></h2>
 
 <p>最近去医院做检查，耗了两天时间，办了多少事呢？</p>
 
@@ -354,107 +216,12 @@ windows7</p>
   1：下面的讨论以及解决方案，仅仅根据我在&lt;湖北省中医院>&lt;广州军区武警总医院>两个医院的实际体验为背景信息，其它医院流程和信息化可能有所差别，so，这里提供的解决方案，仅供参考
   2：某些解决方案，可能现阶段来说，不太现实；未来5-10年内一定会有的</p></blockquote>
 
-<h2><strong>问题分析以及解决方案</strong></h2>
-
-<h3><strong>1.  诊断流程不清晰，病人找不到诊室</strong></h3>
-
-<h4>问题描述</h4>
-
-<pre><code>我们都是只晓得不舒服，但具体要挂哪个科室，心里没谱，只有求助于护士，有了自助挂号机后，部分的减少了护士的接待压力；同时，在具体就诊时，经常会验血，做CT，挂吊针等等，医院的门诊那么多，分布在角角落落，第一次就诊的时候，不清楚，只有求助于护士或看地图；
-</code></pre>
-
-<h4>解决方案</h4>
-
-<pre><code>【挂号科室不清楚】
-现阶段，借助于医院的丰富诊断数据，可以做一个半自动化诊断系统APP，病人在挂号前，就可以借助于这个APP来确定需要挂的科室，直接的降低护士服务压力和提供就诊准确度
-APP的交互形式，可以是语音（类siri）或者在线网页
-注意，这里的半自动是指过程半自动化：只有当人察觉到身体不舒服后，才会去利用诊断系统判断病情
-后期，等可穿戴设备兴起后，形式完全就反转过来了，这些设备完全接管人的健康状态，当检测到身体指标不正常时，会提醒你注意健康状况，并给出对应的解决方案。
-可穿戴设备，可以是最近很火的手环，也可以是能进入血管的超微型机器人
-
-【找不到医院门诊】
-室内地图和室内定位(ibeacon)+虚拟现实技术可以完美的解决这个问题，想象一下，你进医院后，会在眼前看到3-D的虚拟室内地图，如果需要到下一个科室，直接会虚拟3-D地图的方式来导引你到目的地，同时会显示目的地的人流密度和排队情况，prefect
-ok，这个方案理论上非常成熟，需要时间来普及，相信用不了几年，各大超市，医院都会引入该系统。其中的难点是医院内部系统和地图供应商的无缝协助，目测难度很大，很可能的形式是医院推出专用的APP
-</code></pre>
-
-<h3><strong>2.  挂号后，等待时间过长</strong></h3>
-
-<h4>问题描述</h4>
-
-<pre><code>在刷卡挂号后，病人们开始在诊室门前排队等候，某些医院能看到前面的排队人数，某些不能。在那里耗着也没事儿，离开吧，又怕突然轮到自己了，so，啥事都干不了，只好干等着了
-</code></pre>
-
-<h4>解决方案</h4>
-
-<pre><code>问题的根源在于信息发布渠道的单一性，病人只能通过唯一的渠道（就科室门口那个通知牌）来获取信息
-找到问题根源了，解决方法就很明显了
-扩大化通知渠道，将单一通知改为分布式通知
-比如推出个手机APP，搞个微信公共账号啥的，病人先加入通知列表，然后就可以该干嘛干嘛去，当系统发现你前面还有3个人时，就主动推送信息到病人手机上，然后，病人就赶紧回来，老老实实的等着吧
-不晓得各位注意到没，这个方案，解决了避免浪费大量时间，那病人多出来的时间怎么办呢？
-这就是商机，在附件搞个小型的书店或咖啡店啥的，生意肯定很火，是吧^_^
-</code></pre>
-
-<h3><strong>3.  普通医师怎么做才能反超专家号</strong></h3>
-
-<h4>问题描述</h4>
-
-<pre><code>病人在挂号时，肯定都希望自己挂最好的专家，但是专家每天的号数是固定的，只能挂这么多人，so，只有当专家号满时，才会轮到科室医师
-ok，问题来了，我们换个角色，你作为科室医师，肯定希望能做到专家级别，肯定希望别人都来挂自己的号，how？
-</code></pre>
-
-<h4>解决方案</h4>
-
-<blockquote><p>注：本部分待整理</p></blockquote>
-
-<pre><code>首先，进行SWTO分析
-1.  医师拿到的病人数量和质量是确定的，无法更改，so，忽略这个因素
-2.  医师和专家的技术有差距，这个需要接受的现实
-3.  只有实际医术达到一定水平，才能成为专家，必须要时刻提醒自己
-
-我们的目的是：成为专家级
-so，可能采取的措施
-1.  在私底下拼命学习，通过某类考试，获得职称
-2.  理论+实践+态度
-3.  跟某个专家级的师傅来学习
-
-这里仅讨论，如何加速措施2，即
-如何有效的留住病人，并拓展口碑
-
-
-主要突破点，利用互联网工具，加强与病人交互，保持跟踪回馈，确保来一个留住一个
-</code></pre>
-
-<h3><strong>4.  如何克服大型检查项目时间过长的问题</strong></h3>
-
-<h4>问题描述</h4>
-
-<pre><code>在做CT，MRI，胸透时，经常是1-2小时后取结果，怎么缩短这个时间？
-</code></pre>
-
-<h4>解决方案</h4>
-
-<pre><code>时间浪费在哪里了？出胶片？专家会诊？
-再问一句，为什么需要胶片，电子的不行？
-现在信息化程度这么高，都是电子化的，为什么还需要胶片？个人认为只要非跨院操作，都可以采用电子档在各个诊室交互
-
-【专家会诊？这块儿不理解，后期考察论证后补全】
-</code></pre>
-
-<h2><strong>商机</strong></h2>
-
-<p> 注：本节留空，待细化</p>
-
-<pre><code>1.  医院缺自动售货机
-2.  医院缺图书借阅机制
-3.  医院缺充电装置
-3.  医院缺WIFI
-</code></pre>
-
-<h2><strong>潜在风险预估</strong></h2>
-
-<p> 注：本节留空，待细化</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/03/19/rebuild-hospital-via-it-information/">Read on &rarr;</a>
+    </footer>
   
 
 

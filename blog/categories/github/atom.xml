@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Github | Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-20T14:46:45+08:00</updated>
+  <updated>2014-03-20T16:54:00+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -35,7 +35,10 @@
 了解git常用操作，熟悉markdown语法，熟悉HTML，CSS更好</p>
 
 <p><strong>操作环境</strong> <br/>
-windows7</p>
+windows7 32位</p>
+
+<!-- more -->
+
 
 <h2>1.  部署git</h2>
 
@@ -130,9 +133,68 @@ windows7</p>
 
 <h2>部署Ruby</h2>
 
+<p>Octopress是用Ruby语言编写的，所以我们在本机上需要安装Ruby环境和DevKit</p>
+
+<p><strong>特别注意:</strong> Ruby和DevKit的安装目录不能含有空格</p>
+
 <h3>下载Ruby for windows</h3>
 
+<p>rubyinstaller号称是windows上最简单的ruby安装方式，官方网址如下所示：</p>
+
+<pre><code>http://rubyinstaller.org/
+</code></pre>
+
+<p>我们首先安装Ruby 1.9.3版本，这里要特别注意，必须是1.9.3版本，其它版本的不能很好的和octopress协同工作<br/>
+下载链接如下所示：</p>
+
+<pre><code>http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p545.exe
+</code></pre>
+
+<p>占位符，图示安装过程</p>
+
+<p>在安装快结束时，请确保勾选这3个选项</p>
+
 <h3>安装Dev Kit</h3>
+
+<p>因为后面会大量用到gem命令，所以需要Dev Kit</p>
+
+<p><strong>特别注意</strong><br/>
+无论您的系统是32位还是64位，这里的DevKit必须是32位版本，下载链接如下所示：</p>
+
+<pre><code>https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe
+</code></pre>
+
+<p>下载完成后，您会发现DevKit是一个自解压文件包，需要手工输入一些命令才能正确安装，这里我们先把DevKit解压到任何一个固定目录，假设为DevKit_Dir，接下来打开一个CMD窗口并CD到DevKit_Dir目录下</p>
+
+<p><strong>Tips：</strong>如果你用的是win7，可以先选中DevKit_Dir文件夹，按住shift，然后鼠标右键，这时菜单项中会出现<code>在此处打开命令窗口</code>，选择该命令，就可以直接开启一个终端，并自动CD到选中的文件夹目录下，非常好用</p>
+
+<p>在CMD终端里输入以下两条指令</p>
+
+<pre><code>ruby dk.rb init
+ruby dk.rb install
+</code></pre>
+
+<p>如果输完命令后，终端出现以下提示文字，则说明DevKit安装成功</p>
+
+<p>占位符：官方Devkit提示文字</p>
+
+<p>另官方提供的验证方法如下，供参考：</p>
+
+<blockquote><p>  Confirm your Ruby environment is correctly using the DevKit by running gem install json &mdash;platform=ruby. JSON should install correctly and you should see with native extensions in the screen messages. Next run ruby -rubygems -e &ldquo;require &lsquo;json&rsquo;; puts JSON.load(&lsquo;[42]&rsquo;).inspect&rdquo; to confirm that the json gem is working.</p></blockquote>
+
+<p>关于Devkit的更多详细信息，请参考：<br/>
+<a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">https://github.com/oneclick/rubyinstaller/wiki/Development-Kit</a></p>
+
+<h2>部署Python</h2>
+
+<p>octopress官方没有说要安装python，但如果您需要代码高亮功能，则必须安装python，为了避免后期麻烦，我们建议安装ActivePython-2.7.6.9-win32-x86.msi，下载链接如下：</p>
+
+<pre><code>http://downloads.activestate.com/ActivePython/releases/2.7.6.9/ActivePython-2.7.6.9-win32-x86.msi
+</code></pre>
+
+<p>在安装后，手工将python可执行路径添加到系统环境变量</p>
+
+<p>至此，我们完成了Python的部署</p>
 
 <h2>部署Octopress</h2>
 
@@ -140,29 +202,91 @@ windows7</p>
 
 <h3>安装slash主题</h3>
 
-<h2>部署Python</h2>
+<p>slash主题是专为octopress设计的极简风格主题，不仅具有默认主题所有功能，还能自适应各种终端设备，自动调整图片和视频大小，同时具有丰富的插件</p>
 
-<h3>安装</h3>
+<p>在终端中输入如下命令来下载并安装slash主题</p>
 
-<h3>代码高亮</h3>
+<pre><code>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
+rake install ['slash'] 
+rake generate
+</code></pre>
+
+<p><strong>特别注意</strong>  如果使用上面命令后，无法正确显示主题，请用下面命令</p>
+
+<pre><code>git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
+rake install \['slash'\]
+rake generate
+</code></pre>
+
+<p>来代替</p>
 
 <h2>发布博客系统</h2>
 
-<h3>创建第一个博文</h3>
+<p>接下来让我们发布我们的第一个博客文章</p>
 
-<h3>发布到github上</h3>
+<pre><code>gem new_post["Hello world"]
+</code></pre>
+
+<p>进入<code>\source\_post</code>文件夹下，就可以看到<code>2014-03-19-Hello-world.markdown</code>文件，这时，您可以使用任何顺手的文本编辑工具来编辑该文件，同时需要记得将该文件的编码格式调整为<code>UTF-8 无BOM</code></p>
+
+<p>编辑完成后，接下来，我们输入下面的指令还生成相应的静态网站</p>
+
+<pre><code>rake generate  # 生成静态网站
+</code></pre>
+
+<p>我们可以通过下面的指令来在本地预览网站</p>
+
+<pre><code>rake preview # 预览网站
+</code></pre>
+
+<p>不用关闭窗口，直接在浏览器中打开<code>http://localhost:4000/</code>
+这时，当我们修改*.markdown文件后，octopress会自动重新生成静态网站，这时，我们只需要在浏览器中手工刷新界面，就可以看到修改后的效果</p>
+
+<p>当我们编写成满意的网站之后，便可以用下面指令，把新作的修改推送到github服务器上</p>
+
+<pre><code>rake deploy # 推送更新
+</code></pre>
+
+<p>这仅仅是将master分支推送到了github服务器，我们可以通过下面指令来手工将source分支也推送到github服务器上去</p>
+
+<pre><code>git add .                      # 添加所有更新
+git commit -m "First Commit"   # 编写commit记录  
+git push origin source         # 推送source分支到github source分支
+</code></pre>
 
 <h2>注意事项</h2>
 
-<ol>
-<li>经测试，<code>rake preview</code>无法生效，待研究</li>
-<li>markdown原始文本需保证为UTF-8编码格式</li>
-<li>经测试，octopress在Ruby 2.0.0环境下无法正常工作</li>
-<li>如果您发现采用代码高亮后，输出一片空白，请考虑1）是不是python2.7.X，是不是添加环境变量到系统中</li>
-<li>如果无法预览，请检查浏览器设置中，是否使用了代理模式</li>
-<li>插入文档和图片资源</li>
-</ol>
+<p><strong>1. 正确显示中文文档的方法</strong></p>
 
+<p>```</p>
+
+<pre><code>md文件采用英文命名方式  
+md中title项可以为中文，同时用双引号包括中文字符串  
+md正文可以采用中文  
+md文件编码格式为UTF-8，无BOM
+</code></pre>
+
+<p>```</p>
+
+<p><strong>2. 输入<code>rake preview</code>命令后，在浏览器中打开<code>localhost:4000</code>，打开速度非常慢或者完全打不开</strong></p>
+
+<p>```</p>
+
+<pre><code>请检测浏览器是否设置代理模式，如果有，则取消
+</code></pre>
+
+<p>```</p>
+
+<p><strong>3. 代码无高亮或者markdown中含有代码高亮部分时，博客系统无法显示，或者输出一片空白</strong><br/>
+请考虑</p>
+
+<p>```</p>
+
+<pre><code>python的版本是不是2.7.X  
+python路径是不是添加环境变量到系统中
+</code></pre>
+
+<p>```</p>
 
 <h2>参考资料</h2>
 

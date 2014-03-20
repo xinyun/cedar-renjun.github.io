@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 杂谈 | Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/blog/categories/za-tan/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-20T14:46:45+08:00</updated>
+  <updated>2014-03-20T16:54:00+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -18,9 +18,7 @@
     <link href="http://cedar-renjun.github.io/blog/2014/03/19/rebuild-hospital-via-it-information/"/>
     <updated>2014-03-19T19:48:45+08:00</updated>
     <id>http://cedar-renjun.github.io/blog/2014/03/19/rebuild-hospital-via-it-information</id>
-    <content type="html"><![CDATA[<p>[TOC]</p>
-
-<h2><strong>前言</strong></h2>
+    <content type="html"><![CDATA[<h2><strong>前言</strong></h2>
 
 <p>最近去医院做检查，耗了两天时间，办了多少事呢？</p>
 
@@ -83,6 +81,9 @@
 <blockquote><p>  注：
   1：下面的讨论以及解决方案，仅仅根据我在&lt;湖北省中医院>&lt;广州军区武警总医院>两个医院的实际体验为背景信息，其它医院流程和信息化可能有所差别，so，这里提供的解决方案，仅供参考
   2：某些解决方案，可能现阶段来说，不太现实；未来5-10年内一定会有的</p></blockquote>
+
+<!-- more -->
+
 
 <h2><strong>问题分析以及解决方案</strong></h2>
 
