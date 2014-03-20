@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://cedar-renjun.github.io/sitemap.xml 
