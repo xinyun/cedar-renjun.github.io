@@ -8,8 +8,9 @@ footer: true
 ---
 
 
-
 ##  Cedar
+
+
 
 性别男
 
@@ -30,9 +31,13 @@ Do one thing and do it well
 希望遇见同样喜欢折腾的你
 
 
-> 	QQ    : 819280802
->	Email : 819280802@qq.com
->   github: https://github.com/cedar-renjun
+> 	QQ    : 819280802  
+>	Email : 819280802@qq.com  
+>   github: https://github.com/cedar-renjun  
+
+
+
+
 
 
 ##  后记：为什么叫Cedar？
@@ -41,8 +46,7 @@ N久以前，刚注册QQ时，无比兴奋，决定给自己起一个非常霸�
 
 后来，我也忘了怎么找到“雪松”这个名字，反正看着挺顺眼，就这个吧，O(∩_∩)O
 
-12年毕业后，公司Boss说，咱们公司也算是外企了，每个人都整一个英文名字吧，然后，我就起了个汉语拼音xuesong，人事那边胡美女一看，这明明就是汉语拼音啊，太屌丝了，驳回重写，后来苦死冥想3秒钟，就想了Cedar这个名字，其实就是英语中的雪松。。。
-
-Game Over
+12年毕业后，公司Boss说，咱们公司也算是外企了，每个人都整一个英文名字吧，然后，我就起了个汉语拼音xuesong，人事那边胡美女一看，这明明就是汉语拼音啊，太屌丝了，驳回重写，后来苦死冥想3秒钟，就想了Cedar这个名字，其实就是英语中的雪松，这就是Cedar的由来
 
 Enjoy yourself
+
