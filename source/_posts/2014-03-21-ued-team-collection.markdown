@@ -20,6 +20,7 @@ categories:
 CDC成立于2006年5月18日
 全称是Customer Research & User Experience Design Center（即用户研究与体验设计中心）作为腾讯的核心部门之一。CDC自成立以来，就一直向着“做世界一流的互联网设计团队，为用户创造优质‘在线生活’体验”这一愿景努力，致力于不断提升腾讯全线产品的用户体验。
 
+<!-- more -->
 
 2  **[GDC QQ游戏设计中心](http://gdc.qq.com/)**
 
