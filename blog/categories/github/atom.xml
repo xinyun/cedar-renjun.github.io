@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Github | Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-20T16:54:00+08:00</updated>
+  <updated>2014-03-21T11:58:36+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -158,7 +158,7 @@ windows7 32位</p>
 
 <p>因为后面会大量用到gem命令，所以需要Dev Kit</p>
 
-<p><strong>特别注意</strong><br/>
+<p><strong>特别注意：</strong>
 无论您的系统是32位还是64位，这里的DevKit必须是32位版本，下载链接如下所示：</p>
 
 <pre><code>https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe
@@ -200,7 +200,21 @@ ruby dk.rb install
 
 <h3>下载和安装octopress</h3>
 
-<h3>安装slash主题</h3>
+<p>CD到MyBlog目录下，然后输入下面的指令</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+</code></pre>
+
+<p>octopress下载完毕，下面安装依赖项</p>
+
+<pre><code>gem install bundler 
+bundle install
+</code></pre>
+
+<p>安装过程中需要从网上下载一些更新包，第一次时间稍微有些长，请耐心等待</p>
+
+<h3>配置slash主题</h3>
 
 <p>slash主题是专为octopress设计的极简风格主题，不仅具有默认主题所有功能，还能自适应各种终端设备，自动调整图片和视频大小，同时具有丰富的插件</p>
 
@@ -219,6 +233,8 @@ rake generate
 </code></pre>
 
 <p>来代替</p>
+
+<p>至此，octopress和对应主题安装完毕</p>
 
 <h2>发布博客系统</h2>
 
