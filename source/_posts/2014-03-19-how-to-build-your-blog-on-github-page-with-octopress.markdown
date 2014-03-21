@@ -138,7 +138,7 @@ rubyinstaller号称是windows上最简单的ruby安装方式，官方网址如�
 ### 安装Dev Kit
 因为后面会大量用到gem命令，所以需要Dev Kit
 
-**特别注意**  
+**特别注意：**
 无论您的系统是32位还是64位，这里的DevKit必须是32位版本，下载链接如下所示：
 
 	https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe
@@ -178,10 +178,20 @@ octopress官方没有说要安装python，但如果您需要代码高亮功能�
 
 ##	部署Octopress
 
-
-
 ### 下载和安装octopress
-### 安装slash主题
+CD到MyBlog目录下，然后输入下面的指令
+
+	git clone git://github.com/imathis/octopress.git octopress
+	cd octopress
+
+octopress下载完毕，下面安装依赖项
+
+	gem install bundler	
+	bundle install
+
+安装过程中需要从网上下载一些更新包，第一次时间稍微有些长，请耐心等待
+
+### 配置slash主题
 
 slash主题是专为octopress设计的极简风格主题，不仅具有默认主题所有功能，还能自适应各种终端设备，自动调整图片和视频大小，同时具有丰富的插件
 
@@ -199,6 +209,9 @@ slash主题是专为octopress设计的极简风格主题，不仅具有默认主
 	rake generate
 
 来代替
+
+至此，octopress和对应主题安装完毕
+
 
 ##	发布博客系统
 
