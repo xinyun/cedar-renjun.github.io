@@ -4,7 +4,7 @@
   <title><![CDATA[Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-22T21:44:18+08:00</updated>
+  <updated>2014-03-22T22:03:56+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -349,9 +349,108 @@ GENERATE_TREEVIEW      = YES
 
 <p><strong>注：</strong>请点击<a href="http://cedar-renjun.github.io/assets/2014/03/21/html_output_2/index.html">这里</a>查看<code>EXTRACT_ALL = YES</code>的输出结果</p>
 
+<p>接下来，我们为代码中增加对应的描述信息</p>
+
+<p>Doxygen制定了一套注释规范，在保证正确输出文档的同时，也兼顾了良好的可读性。对编程人员来说，只需在编写注释的时候，稍微注意格式，即可生成非常优秀的文档，额外增加的工作量可忽略不计。</p>
+
+<p>下面就是某个函数的Doxygen注释</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">//*****************************************************************************</span>
+</span><span class='line'><span class="c1">//</span>
+</span><span class='line'><span class="c1">//! \brief Write one byte to special register</span>
+</span><span class='line'><span class="c1">//!</span>
+</span><span class='line'><span class="c1">//!  This function is to write one byte to LIS302DL register,one byte will be</span>
+</span><span class='line'><span class="c1">//!  writen in appointed address.</span>
+</span><span class='line'><span class="c1">//!</span>
+</span><span class='line'><span class="c1">//! \param RegAddr specifies the target register address.</span>
+</span><span class='line'><span class="c1">//! \param Data is the data written to target register.</span>
+</span><span class='line'><span class="c1">//!</span>
+</span><span class='line'><span class="c1">//! \return Indicate the status of operation which can be one of the following</span>
+</span><span class='line'><span class="c1">//! value \b SUCCESS or  \b FAILURE .</span>
+</span><span class='line'><span class="c1">//!</span>
+</span><span class='line'><span class="c1">//!  This function is to write one byte to LIS302DL register,one byte will be</span>
+</span><span class='line'><span class="c1">//!  writen in appointed address.</span>
+</span><span class='line'><span class="c1">//</span>
+</span><span class='line'><span class="c1">//*****************************************************************************</span>
+</span><span class='line'><span class="k">static</span> <span class="n">Result</span> <span class="nf">_I2CRegWriteByte</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">RegAddr</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">Data</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">Result</span> <span class="n">retv</span> <span class="o">=</span> <span class="n">SUCCESS</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Begin to I2C Transfer</span>
+</span><span class='line'>    <span class="c1">// first send START signal to control I2C bus</span>
+</span><span class='line'>    <span class="c1">// then send 7-bit address and R/W bit to I2C salve</span>
+</span><span class='line'>    <span class="c1">// at last send target register address</span>
+</span><span class='line'>    <span class="n">retv</span> <span class="o">=</span> <span class="n">xI2CMasterWriteS1</span><span class="p">(</span><span class="n">LIS302DL_PIN_I2C_PORT</span><span class="p">,</span> <span class="n">LIS302DL_I2C_ADDR</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">RegAddr</span><span class="p">,</span> <span class="n">I2C_TRAN_NOT_END</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">retv</span> <span class="o">!=</span> <span class="n">SUCCESS</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">(</span><span class="n">FAILURE</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Send the wanted data to I2C bus</span>
+</span><span class='line'>    <span class="c1">// then Send STOP signal to release I2C bus</span>
+</span><span class='line'>    <span class="n">retv</span> <span class="o">=</span> <span class="n">xI2CMasterWriteS2</span><span class="p">(</span><span class="n">LIS302DL_PIN_I2C_PORT</span><span class="p">,</span> <span class="n">Data</span><span class="p">,</span> <span class="n">I2C_TRAN_END</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">retv</span> <span class="o">!=</span> <span class="n">SUCCESS</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">(</span><span class="n">FAILURE</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span><span class="p">(</span><span class="n">SUCCESS</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>【待续】</p>
+
 <h2>总结</h2>
 
+<p>【占位符，留空】</p>
+
 <h2>深入学习</h2>
+
+<p>【占位符，留空】</p>
 
 <h2>参考资料</h2>
 
