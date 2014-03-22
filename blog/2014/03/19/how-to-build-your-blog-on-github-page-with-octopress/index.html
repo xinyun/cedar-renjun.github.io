@@ -346,32 +346,45 @@ git push origin source         # 推送source分支到github source分支
 
 <h2>注意事项</h2>
 
-<p><strong>1. 正确显示中文文档的方法</strong></p>
+<p><strong>1 正确显示中文文档的方法</strong></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>md文件采用英文命名方式  
-</span><span class='line'>md中title项可以为中文，同时用双引号包括中文字符串  
-</span><span class='line'>md正文可以采用中文  
-</span><span class='line'>md文件编码格式为UTF-8，无BOM</span></code></pre></td></tr></table></div></figure>
+<ul>
+<li>md文件采用英文命名方式</li>
+<li>md中title项可以为中文，同时用双引号包括中文字符串</li>
+<li>md正文可以采用中文</li>
+<li>md文件编码格式为UTF-8，无BOM</li>
+</ul>
 
 
-<p><strong>2. 输入<code>rake preview</code>命令后，在浏览器中打开<code>localhost:4000</code>，打开速度非常慢或者完全打不开</strong></p>
+<p><strong>2 输入<code>rake preview</code>命令后，在浏览器中打开<code>localhost:4000</code>，打开速度非常慢或者完全打不开</strong></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>请检测浏览器是否设置代理模式，如果有，则取消</span></code></pre></td></tr></table></div></figure>
+<ul>
+<li>请检测浏览器是否设置代理模式，如果有，则取消</li>
+</ul>
 
 
-<p><strong>3. 代码无高亮或者markdown中含有代码高亮部分时，博客系统无法显示，或者输出一片空白</strong><br/>
+<p><strong>3 代码无高亮或者markdown中含有代码高亮部分时，博客系统无法显示，或者输出一片空白</strong><br/>
 请考虑</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>python的版本是不是2.7.X  
-</span><span class='line'>python路径是不是添加环境变量到系统中</span></code></pre></td></tr></table></div></figure>
+<ul>
+<li>python的版本是不是2.7.X</li>
+<li>python路径是不是添加环境变量到系统中</li>
+</ul>
 
+
+<p><strong>4 出现Error:invalid byte sequence in GB2312</strong></p>
+
+<p>这是中文编码的错误，如果是写英文博客就不会出错，这似乎是 Jekyll 的一个 bug，解决方法是将 Ruby 安装文件路径下的 .\lib\ruby\gems\1.9.1\gems\jekyll-1.1.2\lib\jekyll\convertible.rb 文件第 31 行：</p>
+
+<pre><code>self.content = File.read(File.join(base, name))
+</code></pre>
+
+<p>修改为：</p>
+
+<pre><code>self.content = File.read(File.join(base, name), :encoding =&gt; "utf-8")
+</code></pre>
+
+<p>这样便可成功启动本地服务器进行调试。</p>
 
 <h2>参考资料</h2>
 
@@ -451,6 +464,10 @@ git push origin source         # 推送source分支到github source分支
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/03/22/review-about-tangjun/">关于唐骏的一点看法</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/03/21/learn-doxygen-in-10-minutes/">Doxygen 10 分钟入门教程</a>
       </li>
     
@@ -464,10 +481,6 @@ git push origin source         # 推送source分支到github source分支
     
       <li class="post">
         <a href="/blog/2014/03/19/how-to-build-your-blog-on-github-page-with-octopress/">用Octopress在github上搭建自己的博客系统</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/03/19/rebuild-hospital-via-it-information/">医院信息化建设</a>
       </li>
     
   </ul>
