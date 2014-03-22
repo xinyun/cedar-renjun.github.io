@@ -4,7 +4,7 @@
   <title><![CDATA[Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-22T19:55:17+08:00</updated>
+  <updated>2014-03-22T20:02:45+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -329,7 +329,7 @@ GENERATE_TREEVIEW      = YES
 <p>这时，Doxygen会从我们的代码中提取相应的文档，并生成HTML文件，进入GettingStart
 文件夹内，双击打开HTML文件夹下的index.html文件</p>
 
-<p>点击<a href="assets/2014/03/22/html_output_1/index.html">这里</a>查看</p>
+<p>点击<a href="http://cedar-renjun.github.io/assets/2014/03/22/html_output_1/index.html">这里</a>查看</p>
 
 <h2>总结</h2>
 
