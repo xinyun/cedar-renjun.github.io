@@ -4,7 +4,7 @@
   <title><![CDATA[Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-22T20:02:45+08:00</updated>
+  <updated>2014-03-22T20:38:23+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -127,7 +127,7 @@ dev.h   // Dev设备的操作接口
 
 <p>具体代码如下：</p>
 
-<figure class='code'><figcaption><span> (main.c)</span> <a href='http://cedar-renjun.github.io/downloads/code/2014/03/22/OriginSourceCode/main.c'>download</a></figcaption>
+<figure class='code'><figcaption><span> (main.c)</span> <a href='http://cedar-renjun.github.io/downloads/code/2014/03/21/OriginSourceCode/main.c'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -181,7 +181,7 @@ dev.h   // Dev设备的操作接口
 </span></code></pre></td></tr></table></div></figure>
 
 
-<figure class='code'><figcaption><span> (dev.c)</span> <a href='http://cedar-renjun.github.io/downloads/code/2014/03/22/OriginSourceCode/dev.c'>download</a></figcaption>
+<figure class='code'><figcaption><span> (dev.c)</span> <a href='http://cedar-renjun.github.io/downloads/code/2014/03/21/OriginSourceCode/dev.c'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -213,7 +213,7 @@ dev.h   // Dev设备的操作接口
 </span></code></pre></td></tr></table></div></figure>
 
 
-<figure class='code'><figcaption><span> (dev.h)</span> <a href='http://cedar-renjun.github.io/downloads/code/2014/03/22/OriginSourceCode/dev.h'>download</a></figcaption>
+<figure class='code'><figcaption><span> (dev.h)</span> <a href='http://cedar-renjun.github.io/downloads/code/2014/03/21/OriginSourceCode/dev.h'>download</a></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -326,10 +326,28 @@ GENERATE_TREEVIEW      = YES
 <pre><code>doxygen .\Doxyfile
 </code></pre>
 
+<p><strong>注：</strong>这个命令称为编译，下文直接用<strong>编译</strong>来代替表示这个指令</p>
+
 <p>这时，Doxygen会从我们的代码中提取相应的文档，并生成HTML文件，进入GettingStart
 文件夹内，双击打开HTML文件夹下的index.html文件</p>
 
-<p>点击<a href="http://cedar-renjun.github.io/assets/2014/03/22/html_output_1/index.html">这里</a>查看</p>
+<p>点击<a href="http://cedar-renjun.github.io/assets/2014/03/21/html_output_1/index.html">这里</a>查看</p>
+
+<p>可以看到，当Doxygen对没有任何注释的代码，也可以生成对应的文档框架，不过，仅仅是框架而已，没有太大作用。Doxygen针对这种情况，专门设置了一个选项<code>EXTRACT_ALL</code>，默认情况下为<code>NO</code>状态，手工设置为YES后，Doxygen会尽可以的从代码中提取信息，这里我们将Doxyfile中的</p>
+
+<pre><code>EXTRACT_ALL            = NO
+</code></pre>
+
+<p>改为</p>
+
+<pre><code>EXTRACT_ALL            = YES
+</code></pre>
+
+<p>然后再次编译，前后输出结果，对比如下：</p>
+
+<p><img src="http://cedar-renjun.github.io/images/2014/03/21/NakeCodeComp.png" alt="对比结果" /></p>
+
+<p><strong>注：</strong>请点击<a href="http://cedar-renjun.github.io/assets/2014/03/21/html_output_2/index.html">这里</a>查看<code>EXTRACT_ALL = YES</code>的输出结果</p>
 
 <h2>总结</h2>
 
