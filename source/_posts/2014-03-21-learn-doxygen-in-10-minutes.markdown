@@ -36,12 +36,122 @@ Doxygen是一款文档生成工具，它可以从代码中提取出相应的文�
 
 ## 开始学习Doxygen
 
-**注：**在继续阅读之前，请确保您知道   
-1.	如何在windows环境下调出命令窗口  
-2.	对
+**注：**在继续阅读之前，请确保您
+
+*	知道如何在windows环境下调出命令窗口
+*	具有简单的编程基础
+
+### 下载和安装
+
+doxygen最新版为1.8.6版本，下载链接如下
+
+	http://sourceforge.net/projects/doxygen/files/latest/download?source=files
+
+下载完成后，双击安装，采用默认设置就ok，这里不做过多介绍
+
+### 准备源文件
+
+这里准备了三个简单的C语言源代码
+
+	main.c  // 演示如何调用Dev中的设备接口
+	dev.c   // Dev设备的实现代码
+	dev.h   // Dev设备的操作接口
+
+具体代码如下：  
+
+{% include_code lang:c 2014/03/22/OriginSourceCode/main.c %}
+{% include_code lang:c 2014/03/22/OriginSourceCode/dev.c %}
+{% include_code lang:c 2014/03/22/OriginSourceCode/dev.h %}
 
 
+将这3个源文件放在某个文件夹内，这里以GettingStart文件夹为例，其目录组织结构如下所示
+
+	GettingStart
+	   |-- dev.c
+	   |-- dev.h
+	   |-- main.c
+
+### 生成文档
+接下来，我们看看，不编写任何注释的情况下，Doxygen会怎么生成文档
+
+打开命令行(powershell)窗口，并CD到GettingStart目录下，输入下面命令
+
+	doxygen -g  
+
+Powershell的返回信息如下，同时，我们的GettingStart目录下增加了一个名叫Doxyfile的文件(注意第21行)
+
+
+{% codeblock lang:powershell %}
+
+F:\Doxygen_Demo\GettingStart> doxygen -g
+
+Configuration file `Doxyfile' created.
+
+Now edit the configuration file and enter
+
+  doxygen Doxyfile
+
+to generate the documentation for your project
+
+PS F:\Doxygen_Demo\GettingStart> ls
+
+
+    dir: F:\Doxygen_Demo\GettingStart
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a---         2014/3/22     15:44        212 dev.c
+-a---         2014/3/22     16:14        119 dev.h
+-a---         2014/3/22     16:46     103431 Doxyfile
+-a---         2014/3/22     15:56        236 main.c
+
+{% endcodeblock %}
+
+
+这个Doxyfile就是Doxygen工程的配置文件，里面含有一些配置信息
+
+接下来我们做一些修改
+
+在默认情况下，Doxygen会输出HTML和LATEX形式文档，LATEX主要用于生成PDF，这里暂时不需要，所以我们禁用LATEX输出
+
+在Doxyfile中将下面一行
+
+	GENERATE_LATEX         = YES
+
+修改为
+
+	GENERATE_LATEX         = NO
+
+接下来，我们修改HTML的显示方式，将下面两行代码
+
+	DISABLE_INDEX          = NO  
+	GENERATE_TREEVIEW      = NO  
+
+修改为
+
+	DISABLE_INDEX          = YES  
+	GENERATE_TREEVIEW      = YES  
+
+至于为什么修改，暂时不用深究，我们后期再讨论
+
+现在我们就可以输出文档了，在命令行（powershell)下输入
+
+	doxygen .\Doxyfile
+
+这时，Doxygen会从我们的代码中提取相应的文档，并生成HTML文件，进入GettingStart
+文件夹内，双击打开HTML文件夹下的index.html文件
+
+点击[这里](assets/2014/03/22/html_output_1/index.html)查看
+
+
+## 总结
 
 ## 深入学习
 
 ## 参考资料
+
+0.	[Doxygen官网](http://www.stack.nl/~dimitri/doxygen/index.html)
+
+0.  [Doxygen支持的命令](http://www.stack.nl/~dimitri/doxygen/manual/commands.html)
+
+0.	[IBM - 学习用doxygen生成源码文档](http://www.ibm.com/developerworks/cn/aix/library/au-learningdoxygen/)
