@@ -159,10 +159,70 @@ Mode                LastWriteTime     Length Name
 
 **注：**请点击[这里]({{ site.url }}/assets/2014/03/21/html_output_2/index.html)查看`EXTRACT_ALL = YES`的输出结果
 
+接下来，我们为代码中增加对应的描述信息
+
+Doxygen制定了一套注释规范，在保证正确输出文档的同时，也兼顾了良好的可读性。对编程人员来说，只需在编写注释的时候，稍微注意格式，即可生成非常优秀的文档，额外增加的工作量可忽略不计。
+
+下面就是某个函数的Doxygen注释
+
+{% codeblock lang:c %}
+
+//*****************************************************************************
+//
+//! \brief Write one byte to special register
+//!
+//!  This function is to write one byte to LIS302DL register,one byte will be
+//!  writen in appointed address.
+//!
+//! \param RegAddr specifies the target register address.
+//! \param Data is the data written to target register.
+//!
+//! \return Indicate the status of operation which can be one of the following
+//! value \b SUCCESS or  \b FAILURE .
+//!
+//!  This function is to write one byte to LIS302DL register,one byte will be
+//!  writen in appointed address.
+//
+//*****************************************************************************
+static Result _I2CRegWriteByte(uint8_t RegAddr, uint8_t Data)
+{
+    Result retv = SUCCESS;
+
+    // Begin to I2C Transfer
+    // first send START signal to control I2C bus
+    // then send 7-bit address and R/W bit to I2C salve
+    // at last send target register address
+    retv = xI2CMasterWriteS1(LIS302DL_PIN_I2C_PORT, LIS302DL_I2C_ADDR,
+            RegAddr, I2C_TRAN_NOT_END);
+    if(retv != SUCCESS)
+    {
+        return (FAILURE);
+    }
+
+    // Send the wanted data to I2C bus
+    // then Send STOP signal to release I2C bus
+    retv = xI2CMasterWriteS2(LIS302DL_PIN_I2C_PORT, Data, I2C_TRAN_END);
+    if(retv != SUCCESS)
+    {
+        return (FAILURE);
+    }
+
+    return(SUCCESS);
+}
+
+{% endcodeblock %}
+
+
+【待续】
+
 
 ## 总结
 
+【占位符，留空】
+
 ## 深入学习
+【占位符，留空】
+
 
 ## 参考资料
 
