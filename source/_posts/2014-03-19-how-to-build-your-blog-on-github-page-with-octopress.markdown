@@ -245,33 +245,37 @@ slash主题是专为octopress设计的极简风格主题，不仅具有默认主
 
 ##  注意事项
 
-**1. 正确显示中文文档的方法**
+**1 正确显示中文文档的方法**
+
+* md文件采用英文命名方式  
+* md中title项可以为中文，同时用双引号包括中文字符串  
+* md正文可以采用中文  
+* md文件编码格式为UTF-8，无BOM
 
 
-```
-    md文件采用英文命名方式  
-    md中title项可以为中文，同时用双引号包括中文字符串  
-    md正文可以采用中文  
-    md文件编码格式为UTF-8，无BOM
-```
+**2 输入`rake preview`命令后，在浏览器中打开`localhost:4000`，打开速度非常慢或者完全打不开**
+
+* 请检测浏览器是否设置代理模式，如果有，则取消
 
 
-**2. 输入`rake preview`命令后，在浏览器中打开`localhost:4000`，打开速度非常慢或者完全打不开**
-
-
-```
-	请检测浏览器是否设置代理模式，如果有，则取消
-```
-
-
-**3. 代码无高亮或者markdown中含有代码高亮部分时，博客系统无法显示，或者输出一片空白**  
+**3 代码无高亮或者markdown中含有代码高亮部分时，博客系统无法显示，或者输出一片空白**  
 请考虑
 
+* python的版本是不是2.7.X  
+* python路径是不是添加环境变量到系统中
 
-```	
-    python的版本是不是2.7.X  
-    python路径是不是添加环境变量到系统中
-```
+**4 出现Error:invalid byte sequence in GB2312**
+
+这是中文编码的错误，如果是写英文博客就不会出错，这似乎是 Jekyll 的一个 bug，解决方法是将 Ruby 安装文件路径下的 .\lib\ruby\gems\1.9.1\gems\jekyll-1.1.2\lib\jekyll\convertible.rb 文件第 31 行：
+
+	self.content = File.read(File.join(base, name))
+
+修改为：
+
+	self.content = File.read(File.join(base, name), :encoding => "utf-8")
+
+这样便可成功启动本地服务器进行调试。
+
 
 
 ##	参考资料
@@ -284,3 +288,4 @@ slash主题是专为octopress设计的极简风格主题，不仅具有默认主
 0.	[w3cschool网络技术培训](http://www.w3cschool.cn/)
 0.	[octopress项目主页](http://octopress.org)
 0.	[slash主题](http://zespia.tw/Octopress-Theme-Slash/index.html)
+
