@@ -203,13 +203,212 @@
 
 <h2>开始学习Doxygen</h2>
 
-<p><strong>注：</strong>在继续阅读之前，请确保您知道 <br/>
-1.  如何在windows环境下调出命令窗口<br/>
-2.  对</p>
+<p><strong>注：</strong>在继续阅读之前，请确保您</p>
+
+<ul>
+<li>知道如何在windows环境下调出命令窗口</li>
+<li>具有简单的编程基础</li>
+</ul>
+
+
+<h3>下载和安装</h3>
+
+<p>doxygen最新版为1.8.6版本，下载链接如下</p>
+
+<pre><code>http://sourceforge.net/projects/doxygen/files/latest/download?source=files
+</code></pre>
+
+<p>下载完成后，双击安装，采用默认设置就ok，这里不做过多介绍</p>
+
+<h3>准备源文件</h3>
+
+<p>这里准备了三个简单的C语言源代码</p>
+
+<pre><code>main.c  // 演示如何调用Dev中的设备接口
+dev.c   // Dev设备的实现代码
+dev.h   // Dev设备的操作接口
+</code></pre>
+
+<p>具体代码如下：</p>
+
+<figure class='code'><figcaption><span> (main.c)</span> <a href='/downloads/code/2014/03/22/OriginSourceCode/main.c'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &quot;dev.h&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#define CNT_MAX 10</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">DEV_Example</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">Dev_Init</span><span class="p">();</span>
+</span><span class='line'>  
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">CNT_MAX</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>      <span class="n">Dev_PrintInt</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">Dev_Close</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">DEV_Example</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span> (dev.c)</span> <a href='/downloads/code/2014/03/22/OriginSourceCode/dev.c'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">Dev_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Dev Initialize OK!</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">Dev_PrintInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Print IntType number: %d</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">Dev_Close</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Dev Close OK!</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span> (dev.h)</span> <a href='/downloads/code/2014/03/22/OriginSourceCode/dev.h'>download</a></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">extern</span> <span class="kt">void</span> <span class="nf">Dev_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span class='line'><span class="k">extern</span> <span class="kt">int</span> <span class="nf">Dev_PrintInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">);</span>
+</span><span class='line'><span class="k">extern</span> <span class="kt">void</span> <span class="nf">Dev_Close</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>将这3个源文件放在某个文件夹内，这里以GettingStart文件夹为例，其目录组织结构如下所示</p>
+
+<pre><code>GettingStart
+   |-- dev.c
+   |-- dev.h
+   |-- main.c
+</code></pre>
+
+<h3>生成文档</h3>
+
+<p>接下来，我们看看，不编写任何注释的情况下，Doxygen会怎么生成文档</p>
+
+<p>打开命令行(powershell)窗口，并CD到GettingStart目录下，输入下面命令</p>
+
+<pre><code>doxygen -g  
+</code></pre>
+
+<p>Powershell的返回信息如下，同时，我们的GettingStart目录下增加了一个名叫Doxyfile的文件</p>
+
+<figure class='code'><figcaption><span>Hello world</span><a href='http://baidu.com'>link start:10 </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">Dev_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Dev Initialize OK!</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">Dev_PrintInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Print IntType number: %d</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="nf">Dev_Close</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Dev Close OK!</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Coffeescript Tricks start:51 mark:51,54-55 </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># Given an alphabet:</span>
+</span><span class='line'><span class="nv">alphabet = </span><span class="s">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Iterate over part of the alphabet:</span>
+</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">letter</span> <span class="k">for</span> <span class="nx">letter</span> <span class="k">in</span> <span class="nx">alphabet</span><span class="p">[</span><span class="mi">4</span><span class="p">..</span><span class="mi">8</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>总结</h2>
 
 <h2>深入学习</h2>
 
 <h2>参考资料</h2>
+
+<ol>
+<li><p><a href="http://www.stack.nl/~dimitri/doxygen/index.html">Doxygen官网</a></p></li>
+<li><p><a href="http://www.stack.nl/~dimitri/doxygen/manual/commands.html">Doxygen支持的命令</a></p></li>
+<li><p><a href="http://www.ibm.com/developerworks/cn/aix/library/au-learningdoxygen/">IBM &ndash; 学习用doxygen生成源码文档</a></p></li>
+</ol>
+
 </div>
   
   
