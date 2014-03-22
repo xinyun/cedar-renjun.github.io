@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-22T17:23:44+08:00</updated>
+  <updated>2014-03-22T19:55:17+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -311,6 +311,10 @@ git push origin source         # 推送source分支到github source分支
 </code></pre>
 
 <p>这样便可成功启动本地服务器进行调试。</p>
+
+<p><strong>5 代码高亮中的linenos和mark无效</strong></p>
+
+<p>这个暂时无解</p>
 
 <h2>参考资料</h2>
 

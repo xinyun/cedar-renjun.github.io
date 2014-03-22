@@ -4,7 +4,7 @@
   <title><![CDATA[Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-22T17:23:44+08:00</updated>
+  <updated>2014-03-22T19:55:17+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -244,9 +244,9 @@ dev.h   // Dev设备的操作接口
 <pre><code>doxygen -g  
 </code></pre>
 
-<p>Powershell的返回信息如下，同时，我们的GettingStart目录下增加了一个名叫Doxyfile的文件</p>
+<p>Powershell的返回信息如下，同时，我们的GettingStart目录下增加了一个名叫Doxyfile的文件(注意第21行)</p>
 
-<figure class='code'><figcaption><span>Hello world</span><a href='http://baidu.com'>link start:10 </a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -260,38 +260,76 @@ dev.h   // Dev设备的操作接口
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">void</span> <span class="nf">Dev_Init</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Dev Initialize OK!</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='powershell'><span class='line'><span class="n">F</span><span class="err">:</span><span class="p">\</span><span class="n">Doxygen_Demo</span><span class="p">\</span><span class="n">GettingStart</span><span class="p">&gt;</span> <span class="n">doxygen</span> <span class="n">-g</span>
 </span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">Dev_PrintInt</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Print IntType number: %d</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="n">Configuration</span> <span class="n">file</span> <span class="p">`</span><span class="n">Doxyfile</span><span class="err">&#39;</span> <span class="n">created</span><span class="p">.</span>
 </span><span class='line'>
-</span><span class='line'><span class="kt">void</span> <span class="nf">Dev_Close</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Dev Close OK!</span><span class="se">\r\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="n">Now</span> <span class="n">edit</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">file</span> <span class="n">and</span> <span class="n">enter</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">doxygen</span> <span class="n">Doxyfile</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">to</span> <span class="n">generate</span> <span class="n">the</span> <span class="n">documentation</span> <span class="k">for</span> <span class="n">your</span> <span class="n">project</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">PS</span> <span class="n">F</span><span class="err">:</span><span class="p">\</span><span class="n">Doxygen_Demo</span><span class="p">\</span><span class="n">GettingStart</span><span class="p">&gt;</span> <span class="n">ls</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">dir</span><span class="err">:</span> <span class="n">F</span><span class="err">:</span><span class="p">\</span><span class="n">Doxygen_Demo</span><span class="p">\</span><span class="n">GettingStart</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">Mode</span>                <span class="n">LastWriteTime</span>     <span class="n">Length</span> <span class="n">Name</span>
+</span><span class='line'><span class="p">----</span>                <span class="p">-------------</span>     <span class="p">------</span> <span class="p">----</span>
+</span><span class='line'><span class="n">-a</span><span class="p">---</span>         <span class="n">2014</span><span class="p">/</span><span class="n">3</span><span class="p">/</span><span class="n">22</span>     <span class="n">15</span><span class="err">:</span><span class="n">44</span>        <span class="n">212</span> <span class="n">dev</span><span class="p">.</span><span class="n">c</span>
+</span><span class='line'><span class="n">-a</span><span class="p">---</span>         <span class="n">2014</span><span class="p">/</span><span class="n">3</span><span class="p">/</span><span class="n">22</span>     <span class="n">16</span><span class="err">:</span><span class="n">14</span>        <span class="n">119</span> <span class="n">dev</span><span class="p">.</span><span class="n">h</span>
+</span><span class='line'><span class="n">-a</span><span class="p">---</span>         <span class="n">2014</span><span class="p">/</span><span class="n">3</span><span class="p">/</span><span class="n">22</span>     <span class="n">16</span><span class="err">:</span><span class="n">46</span>     <span class="n">103431</span> <span class="n">Doxyfile</span>
+</span><span class='line'><span class="n">-a</span><span class="p">---</span>         <span class="n">2014</span><span class="p">/</span><span class="n">3</span><span class="p">/</span><span class="n">22</span>     <span class="n">15</span><span class="err">:</span><span class="n">56</span>        <span class="n">236</span> <span class="n">main</span><span class="p">.</span><span class="n">c</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<p>这个Doxyfile就是Doxygen工程的配置文件，里面含有一些配置信息</p>
 
+<p>接下来我们做一些修改</p>
 
-<figure class='code'><figcaption><span>Coffeescript Tricks start:51 mark:51,54-55 </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="c1"># Given an alphabet:</span>
-</span><span class='line'><span class="nv">alphabet = </span><span class="s">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># Iterate over part of the alphabet:</span>
-</span><span class='line'><span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="nx">letter</span> <span class="k">for</span> <span class="nx">letter</span> <span class="k">in</span> <span class="nx">alphabet</span><span class="p">[</span><span class="mi">4</span><span class="p">..</span><span class="mi">8</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>在默认情况下，Doxygen会输出HTML和LATEX形式文档，LATEX主要用于生成PDF，这里暂时不需要，所以我们禁用LATEX输出</p>
 
+<p>在Doxyfile中将下面一行</p>
+
+<pre><code>GENERATE_LATEX         = YES
+</code></pre>
+
+<p>修改为</p>
+
+<pre><code>GENERATE_LATEX         = NO
+</code></pre>
+
+<p>接下来，我们修改HTML的显示方式，将下面两行代码</p>
+
+<pre><code>DISABLE_INDEX          = NO  
+GENERATE_TREEVIEW      = NO  
+</code></pre>
+
+<p>修改为</p>
+
+<pre><code>DISABLE_INDEX          = YES  
+GENERATE_TREEVIEW      = YES  
+</code></pre>
+
+<p>至于为什么修改，暂时不用深究，我们后期再讨论</p>
+
+<p>现在我们就可以输出文档了，在命令行（powershell)下输入</p>
+
+<pre><code>doxygen .\Doxyfile
+</code></pre>
+
+<p>这时，Doxygen会从我们的代码中提取相应的文档，并生成HTML文件，进入GettingStart
+文件夹内，双击打开HTML文件夹下的index.html文件</p>
+
+<p>点击<a href="assets/2014/03/22/html_output_1/index.html">这里</a>查看</p>
 
 <h2>总结</h2>
 
@@ -853,6 +891,10 @@ git push origin source         # 推送source分支到github source分支
 </code></pre>
 
 <p>这样便可成功启动本地服务器进行调试。</p>
+
+<p><strong>5 代码高亮中的linenos和mark无效</strong></p>
+
+<p>这个暂时无解</p>
 
 <h2>参考资料</h2>
 
