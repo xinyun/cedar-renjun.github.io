@@ -59,9 +59,9 @@ doxygen最新版为1.8.6版本，下载链接如下
 
 具体代码如下：  
 
-{% include_code lang:c 2014/03/22/OriginSourceCode/main.c %}
-{% include_code lang:c 2014/03/22/OriginSourceCode/dev.c %}
-{% include_code lang:c 2014/03/22/OriginSourceCode/dev.h %}
+{% include_code lang:c 2014/03/21/OriginSourceCode/main.c %}
+{% include_code lang:c 2014/03/21/OriginSourceCode/dev.c %}
+{% include_code lang:c 2014/03/21/OriginSourceCode/dev.h %}
 
 
 将这3个源文件放在某个文件夹内，这里以GettingStart文件夹为例，其目录组织结构如下所示
@@ -138,10 +138,26 @@ Mode                LastWriteTime     Length Name
 
 	doxygen .\Doxyfile
 
+**注：**这个命令称为编译，下文直接用**编译**来代替表示这个指令
+
 这时，Doxygen会从我们的代码中提取相应的文档，并生成HTML文件，进入GettingStart
 文件夹内，双击打开HTML文件夹下的index.html文件
 
-点击[这里]({{ site.url }}/assets/2014/03/22/html_output_1/index.html)查看
+点击[这里]({{ site.url }}/assets/2014/03/21/html_output_1/index.html)查看
+
+可以看到，当Doxygen对没有任何注释的代码，也可以生成对应的文档框架，不过，仅仅是框架而已，没有太大作用。Doxygen针对这种情况，专门设置了一个选项`EXTRACT_ALL`，默认情况下为`NO`状态，手工设置为YES后，Doxygen会尽可以的从代码中提取信息，这里我们将Doxyfile中的
+
+	EXTRACT_ALL            = NO
+
+改为
+
+	EXTRACT_ALL            = YES
+
+然后再次编译，前后输出结果，对比如下：
+
+![对比结果]({{ site.url }}/images/2014/03/21/NakeCodeComp.png)
+
+**注：**请点击[这里]({{ site.url }}/assets/2014/03/21/html_output_2/index.html)查看`EXTRACT_ALL = YES`的输出结果
 
 
 ## 总结
