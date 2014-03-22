@@ -141,7 +141,7 @@ Mode                LastWriteTime     Length Name
 这时，Doxygen会从我们的代码中提取相应的文档，并生成HTML文件，进入GettingStart
 文件夹内，双击打开HTML文件夹下的index.html文件
 
-点击[这里](assets/2014/03/22/html_output_1/index.html)查看
+点击[这里]({{ site.url }}/assets/2014/03/22/html_output_1/index.html)查看
 
 
 ## 总结
