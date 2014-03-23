@@ -27,6 +27,9 @@ Doxygen是一款文档生成工具，它可以从代码中提取出相应的文�
 目前Doxygen支持C/C++，Objective-C, C#，PHP等语言，支持多平台(Mac OS, Linux, Windows)，更多信息，请参考[Doxygen官方介绍](http://www.stack.nl/~dimitri/doxygen/index.html)
 
 
+<!-- more -->
+
+
 ## Doxygen适合什么人？
 
 适合对代码文档有一定要求的程序员
@@ -84,6 +87,7 @@ Powershell的返回信息如下，同时，我们的GettingStart目录下增加�
 {% codeblock lang:powershell %}
 
 F:\Doxygen_Demo\GettingStart> doxygen -g
+
 
 Configuration file `Doxyfile' created.
 
@@ -171,8 +175,8 @@ Doxygen制定了一套注释规范，在保证正确输出文档的同时，也�
 //
 //! \brief Write one byte to special register
 //!
-//!  This function is to write one byte to LIS302DL register,one byte will be
-//!  writen in appointed address.
+//! This function is to write one byte to LIS302DL register,one byte will be
+//! writen in appointed address.
 //!
 //! \param RegAddr specifies the target register address.
 //! \param Data is the data written to target register.
@@ -180,8 +184,8 @@ Doxygen制定了一套注释规范，在保证正确输出文档的同时，也�
 //! \return Indicate the status of operation which can be one of the following
 //! value \b SUCCESS or  \b FAILURE .
 //!
-//!  This function is to write one byte to LIS302DL register,one byte will be
-//!  writen in appointed address.
+//! \note This function is used by internal, user MUST NOT call it in your 
+//!  Application.
 //
 //*****************************************************************************
 static Result _I2CRegWriteByte(uint8_t RegAddr, uint8_t Data)
@@ -211,6 +215,22 @@ static Result _I2CRegWriteByte(uint8_t RegAddr, uint8_t Data)
 }
 
 {% endcodeblock %}
+
+
+我们可以看到，程序代码可读性非常好，即便没有生成单独的文档，任何具有一定英文基础的同学都可以
+轻松的了解到函数的用法和入口参数，注意事项等信息。
+
+接下来，我们采用Doxygen语法为main.c dev.c dev.h添加注释信息，完成后的效果如下所示：
+
+{% include_code lang:c 2014/03/21/FinalSourceCode/main.c %}
+{% include_code lang:c 2014/03/21/FinalSourceCode/dev.c %}
+{% include_code lang:c 2014/03/21/FinalSourceCode/dev.h %}
+
+用Doxygen编译后，生成的HTML文档如下所示：
+
+![最终效果]({{ site.url }}/images/2014/03/21/Doxygen_Final_Demo.png)
+
+**注：**请点击[这里]({{ site.url }}/assets/2014/03/21/html_output_final/index.html)查看详细的输出文档。
 
 
 【待续】
