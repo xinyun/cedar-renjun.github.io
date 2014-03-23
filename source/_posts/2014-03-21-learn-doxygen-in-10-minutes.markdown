@@ -228,7 +228,7 @@ static Result _I2CRegWriteByte(uint8_t RegAddr, uint8_t Data)
 
 用Doxygen编译后，生成的HTML文档如下所示：
 
-![最终效果]({{ site.url }}/images/2014/03/21/Doxygen_Final_Demo.png)
+![最终效果]({{ site.url }}/images/2014/03/21/Doxygen_Final_Demo.jpg)
 
 **注：**请点击[这里]({{ site.url }}/assets/2014/03/21/html_output_final/index.html)查看详细的输出文档。
 
