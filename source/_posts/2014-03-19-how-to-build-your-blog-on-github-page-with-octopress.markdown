@@ -6,6 +6,9 @@ comments: true
 categories: [github, octopress]
 ---
 
+【文档修订中，随时更改】
+
+
 ##	写在前面的话
 	
 搞软件的，一般都晓得[github](https://github.com)和[stackoverflow](http://stackoverflow.com/)这两个著名网站，前者是分布式代码仓库，后者是技术问答社区，这里不做过多介绍
