@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 教程，Doxygen | Enjoy Programming, Enjoy Life]]></title>
   <link href="http://cedar-renjun.github.io/blog/categories/jiao-cheng-,doxygen/atom.xml" rel="self"/>
   <link href="http://cedar-renjun.github.io/"/>
-  <updated>2014-03-23T21:48:16+08:00</updated>
+  <updated>2014-03-24T09:12:21+08:00</updated>
   <id>http://cedar-renjun.github.io/</id>
   <author>
     <name><![CDATA[Cedar]]></name>
@@ -23,6 +23,8 @@
 <p>本文试图在10分钟内，帮助您了解文档生成工具Doxygen的基本概念，并熟悉Doxygen的使用规则，同时给予深入学习的一些方向性建议。</p>
 
 <p>因为本文仅仅是帮助初学者入门，所以选例方面较为简单，缺乏广度和深度。后期会编写一些深度学习Doxygen的文章，敬请关注</p>
+
+<p>【占位符：文章结构整体描述】</p>
 
 <h2>Doxygen是什么东西？</h2>
 
@@ -45,7 +47,7 @@
 
 <h2>开始学习Doxygen</h2>
 
-<p><strong>注：</strong>在继续阅读之前，请确保您</p>
+<p><strong>注：</strong>在继续阅读之前，请确保您：</p>
 
 <ul>
 <li>知道如何在windows环境下调出命令窗口</li>
@@ -803,7 +805,7 @@ GENERATE_TREEVIEW      = YES
 </ul>
 
 
-<p>在实际编程中，事先约定各个模块间的接口，然后将不同的模块分配给不同的开发者，于此同时，测试人员根据接口要求，编写测试代码，这就完全保证了并发编程和白盒测试要求。</p>
+<p>在实际编程中，事先约定各个模块间的接口，然后将不同的模块分配给不同的开发者，与此同时，测试人员根据接口要求，编写测试代码，这就完全保证了并发编程和白盒测试要求。</p>
 
 <p>这里我们可以看到，文档主要是用来描述接口信息的，所以，我对代码的注释规定如下：</p>
 
@@ -870,7 +872,7 @@ extern int Dev_PrintInt(int number);
 <p>接下来，还有一个问题，我们上面的注释中，有很多<code>*</code>号，仅仅起到美观和格式化的作用，当然不希望在
 输出文档中显示这些东西，问题是你怎么识别这些符号，并不显示呢？也许你会说，可以强制规定注释的
 格式，不让用户在代码中写很多<code>*</code>，ok，假设用户同意这么做。那接下来呢，如果我希望在代码中写某些话
-，但是不希望输出到文档中，比如“祝某党长命百岁，领导是2B”等等，你又该怎么做呢？</p>
+，但是不希望输出到文档中，比如“XX是2B”等等，你又该怎么做呢？</p>
 
 <p>正向思考遇到问题时，不妨反向考虑，这是谁的问题：是我设计思路的问题还是用户用法的问题？</p>
 
@@ -1014,12 +1016,14 @@ extern int Dev_PrintInt(int number);
 extern int Dev_PrintInt(int number);
 </code></pre>
 
-<p>相信某些玩过ARM芯片的，对这类注释非常熟悉，官方库都是采用Doxygen语法规则注释的，我也写过一套LPC17xx
-的库 <a href="https://github.com/cedar-renjun/Cox_LPC17xx">https://github.com/cedar-renjun/Cox_LPC17xx</a></p>
+<p>相信某些玩过ARM芯片的，对这类注释非常熟悉，官方库都是采用Doxygen语法规则注释的</p>
+
+<!--我也写过一套LPC17xx的库 https://github.com/cedar-renjun/Cox_LPC17xx-->
+
 
 <p>那么，我们怎么知道Doxygen认识哪些符号呢，参考Doxygen自带手册啊，<a href="http://www.stack.nl/~dimitri/doxygen/manual/commands.html">Special Commands</a>章节</p>
 
-<p>授之于鱼，不如授之于渔，该说的多介绍完了，至于具体的指令含义和用法，自己慢慢看手册呗</p>
+<p>授之于鱼，不如授之于渔，该说的都介绍完了，至于具体的指令含义和用法，自己慢慢看手册呗</p>
 
 <p>注：点击<a href="/assets/2014/03/21/DoxygenGettingStart.zip">这里</a>下载GettingStart的压缩包，包含源码，HTML输出文档，配置脚本
 如果在看脚本的时候遇到问题，请参考<a href="http://www.stack.nl/~dimitri/doxygen/manual/config.html">这里</a></p>
